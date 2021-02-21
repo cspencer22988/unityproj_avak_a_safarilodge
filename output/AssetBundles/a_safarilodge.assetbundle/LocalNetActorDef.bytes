@@ -1,0 +1,186 @@
+{
+	"rooms": 
+		[
+			{
+				"r": "create_actors",
+				"actor_data": 
+					[
+						{
+							"actor_id": "Elephant_trumpeting",
+							"components": 
+								[
+									{
+										"type": "volume_trigger",
+										"volume_data": 
+											[
+												{
+													"collision_type": "box",
+													"center": 
+														[
+															-9.537398,
+															2.79106474,
+															12.3201113
+														],
+													"extents": 
+														[
+															4.308551,
+															2.82999969,
+															3.162681
+														],
+													"rotation": 
+														[
+															0,
+															0.3748073,
+															0
+														]
+												},
+												{
+													"collision_type": "box",
+													"center": 
+														[
+															5.45260143,
+															2.79106379,
+															12.2201109
+														],
+													"extents": 
+														[
+															4.308551,
+															2.82999969,
+															3.162681
+														],
+													"rotation": 
+														[
+															0,
+															0.3748073,
+															0
+														]
+												}
+											],
+										"trigger_type": "local"
+									},
+									{
+										"type": "net_actor_node",
+										"inputs": 
+											[
+												{
+													"input_port": "Ele_trump_on",
+													"actions": 
+														[
+															{
+																"a": "model_animation",
+																"r": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"o": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"uid": "local",
+																"p": 
+																	{
+																		"name": "Ele_trump_on",
+																		"wrap_mode": "once",
+																		"switch_mode": "blend"
+																	}
+															}
+														]
+												},
+												{
+													"input_port": "Ele_trump_off",
+													"actions": 
+														[
+															{
+																"a": "model_animation",
+																"r": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"o": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"uid": "local",
+																"p": 
+																	{
+																		"name": "Ele_trump_off",
+																		"wrap_mode": "loop"
+																	}
+															}
+														]
+												}
+											],
+										"outputs": 
+											[
+												{
+													"output_port": "volume_trigger_enter_first",
+													"cooldown": 2,
+													"output_port_data": 
+														[
+															{
+																"type": "local_wiring",
+																"actor_id": "Elephant_trumpeting",
+																"input_port": "Ele_trump_on"
+															}
+														]
+												},
+												{
+													"output_port": "volume_trigger_exit_all",
+													"cooldown": 2,
+													"output_port_data": 
+														[
+															{
+																"type": "local_wiring",
+																"actor_id": "Elephant_trumpeting",
+																"input_port": "Ele_trump_off"
+															}
+														],
+													"restricted_types": 
+														[
+															"avakin",
+															"petkin"
+														]
+												}
+											]
+									},
+									{
+										"type": "model",
+										"version": 1,
+										"game_asset_url": "sceneref://Room_0/InteractiveObjects/Elephant_trumpeting"
+									}
+								],
+							"actions": 
+								[
+									{
+										"a": "position",
+										"o": 
+											[
+												1.74,
+												3.1,
+												-21.53
+											],
+										"uid": "local"
+									},
+									{
+										"a": "model_set_visible",
+										"uid": "local",
+										"p": 
+											{
+												"method": "Immediate",
+												"visible": true
+											}
+									}
+								]
+						}
+					]
+			}
+		]
+}
